@@ -12,27 +12,13 @@ class Sensor:
         self.__sensor_dev = sensor_device
 
     def measure(self):
-        return self.__sensor_dev.read.strip()
-
-    def dispose(self):
-        self.__sensor_dev.close()
-
-    @staticmethod
-    def of(sensor_name):
-        return Sensor(open(sensor_name))
+        with open(self.__sensor_dev) as dev:
+            return dev.read().strip()
 
 
 class MockSensor:
-    def __init__(self):
-        self.is_disposed = False
-
     def measure(self):
-        if self.is_disposed:
-            raise Exception()
         return 42
-
-    def dispose(self):
-        self.is_disposed = True
 
 
 class WeatherSensor:
@@ -46,14 +32,10 @@ class WeatherSensor:
     def get_humidity(self):
         return self.__humidity.measure()
 
-    def dispose(self):
-        self.__temp.dispose()
-        self.__humidity.dispose()
-
     @staticmethod
     def mock():
         return WeatherSensor(MockSensor(), MockSensor())
 
     @staticmethod
     def build():
-        return WeatherSensor(Sensor.of(TEMPERATURE), Sensor.of(HUMIDITY))
+        return WeatherSensor(Sensor(TEMPERATURE), Sensor(HUMIDITY))
