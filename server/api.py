@@ -7,6 +7,6 @@ app = Flask(__name__)
 sensor = WeatherSensor.build()
 
 
-@app.route('/api/report', methods=['GET'])
+@app.route('/weather/report', methods=['GET'])
 def get_weather_report():
     return jsonify(get_report(sensor))
