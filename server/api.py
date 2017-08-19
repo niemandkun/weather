@@ -10,8 +10,3 @@ sensor = WeatherSensor.build()
 @app.route('/api/report', methods=['GET'])
 def get_weather_report():
     return jsonify(get_report(sensor))
-
-
-@app.teardown_appcontext
-def dispose_sensor(*args, **kwargs):
-    sensor.dispose()
