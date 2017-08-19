@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textHuge">56sp</dimen>
+    <dimen name="textRegular">16sp</dimen>
+    <dimen name="activityPadding">16dp</dimen>
+    <dimen name="foregroundElevation">4dp</dimen>
+    <dimen name="foregroundCornerRadius">4dp</dimen>
+</resources>
