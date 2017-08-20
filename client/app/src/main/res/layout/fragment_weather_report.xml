@@ -39,15 +39,14 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorTextMain"
                     android:textSize="@dimen/textRegular"
+                    android:layout_centerVertical="true"
                     android:text="@string/temperature"/>
 
             <TextView
                     android:id="@+id/fragment_weather_report_temperature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorTextMain"
                     android:textSize="@dimen/textHuge"
                     android:layout_alignParentEnd="true"
                     tools:text="24°C"/>
@@ -69,7 +68,7 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorTextMain"
+                    android:layout_centerVertical="true"
                     android:textSize="@dimen/textRegular"
                     android:text="@string/humidity"/>
 
@@ -78,7 +77,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:textColor="@color/colorTextMain"
                     android:textSize="@dimen/textHuge"
                     tools:text="68%"/>
 

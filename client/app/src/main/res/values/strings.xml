@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Weather at home</string>
-    <string name="humidity">Relative\nhumidity</string>
-    <string name="temperature">Temperature\nof the air</string>
+    <string name="humidity">Humidity</string>
+    <string name="temperature">Temperature</string>
     <string name="temperature_fmt">%d°C</string>
     <string name="humidity_fmt">%d%%</string>
     <string name="error_fmt">O-o-ops…\n\n:(\n\nAn error has occurred:\n%s</string>
