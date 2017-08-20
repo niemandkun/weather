@@ -4,5 +4,5 @@
     <dimen name="textRegular">16sp</dimen>
     <dimen name="activityPadding">16dp</dimen>
     <dimen name="foregroundElevation">4dp</dimen>
-    <dimen name="foregroundCornerRadius">4dp</dimen>
+    <dimen name="foregroundCornerRadius">8dp</dimen>
 </resources>

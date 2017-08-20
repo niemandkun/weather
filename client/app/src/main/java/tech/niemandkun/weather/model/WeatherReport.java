@@ -5,6 +5,8 @@ import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 
 public final class WeatherReport implements Parcelable {
+    private final static int SCALE = 1000;
+
     public static final Creator<WeatherReport> CREATOR = new Creator<WeatherReport>() {
         @Override
         public WeatherReport createFromParcel(Parcel in) {
@@ -41,11 +43,19 @@ public final class WeatherReport implements Parcelable {
         return 0;
     }
 
-    public float getTemperature() {
-        return mTemperature;
+    public int getTemperature() {
+        return mTemperature / SCALE;
     }
 
-    public float getHumidity() {
-        return mHumidity;
+    public int getHumidity() {
+        return mHumidity / SCALE;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "humidity=" + mHumidity + "," +
+                "temperature=" + mTemperature +
+                "}";
     }
 }

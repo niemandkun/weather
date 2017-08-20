@@ -34,6 +34,8 @@ public class WeatherReportPresenter extends Presenter<WeatherReportPresenter.Rep
     public void onViewAttached(ReportView reportView, Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             mLastReport = savedInstanceState.getParcelable(STATE_REPORT);
+        } else {
+            startLoadingReport();
         }
         if (mLastReport != null) {
             reportView.showReport(mLastReport);

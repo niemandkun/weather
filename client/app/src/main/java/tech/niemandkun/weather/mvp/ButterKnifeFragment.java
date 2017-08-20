@@ -17,10 +17,8 @@ public class ButterKnifeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         BindLayout bindingAnnotation = getClass().getAnnotation(BindLayout.class);
         if (bindingAnnotation != null) {
-            Log.e("ButterKnifeFragment", "annotation is not null");
             return inflater.inflate(bindingAnnotation.value(), container, false);
         }
-        Log.e("ButterKnifeFragment", "annotation is null");
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 

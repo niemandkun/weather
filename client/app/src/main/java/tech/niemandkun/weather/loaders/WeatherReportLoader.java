@@ -17,10 +17,20 @@ public class WeatherReportLoader extends AsyncTaskLoader<WeatherReportLoaderResu
     }
 
     @Override
+    protected void onStartLoading() {
+        forceLoad();
+    }
+
+    @Override
     public WeatherReportLoaderResult loadInBackground() {
         WeatherClient client = WeatherClient.getInstance();
         try {
             WeatherReport report = client.getReport();
+            if (report == null) {
+                Log.e(TAG, "Report body was null");
+                return WeatherReportLoaderResult.with(new Exception());
+            }
+            Log.i(TAG, "Report loaded: " + report.toString());
             return WeatherReportLoaderResult.with(report);
         } catch (ApiException e) {
             Log.e(TAG, "ApiException was thrown while retrieving result: " + e.getCode() + " - " + e.getMessage());

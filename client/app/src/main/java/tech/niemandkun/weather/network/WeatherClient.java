@@ -1,6 +1,6 @@
 package tech.niemandkun.weather.network;
 
-import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -31,14 +31,10 @@ public class WeatherClient {
         mWeatherApi = retrofit.create(WeatherApi.class);
     }
 
-    public @NonNull WeatherReport getReport() throws IOException, ApiException {
+    public @Nullable WeatherReport getReport() throws IOException, ApiException {
         Response<WeatherReport> response = mWeatherApi.getReport().execute();
         if (response.isSuccessful()) {
-            WeatherReport responseBody = response.body();
-            if (responseBody != null) {
-                return responseBody;
-            }
-            throw new IOException("Response body was null.");
+            return response.body();
         }
         throw new ApiException(response.code(), response.message());
     }
