@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Weather at home</string>
+    <string name="app_name">Weather sensor</string>
     <string name="humidity">Humidity</string>
     <string name="temperature">Temperature</string>
     <string name="temperature_fmt">%d°C</string>
